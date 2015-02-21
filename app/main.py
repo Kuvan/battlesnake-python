@@ -28,7 +28,7 @@ def move():
     data = bottle.request.json
 
     return json.dumps({
-        'move': 'up',
+        'move': 'down',
         'taunt': 'battlesnake-python!'
     })
 
