@@ -2,6 +2,7 @@ import bottle
 import json
 
 class decesion():
+	return
 	def __init__(self):
 		print 'hello world'
 
