@@ -74,7 +74,7 @@ def index():
 def start():
     data = bottle.request.json
     
-    
+    print data['width']
 
     decide.realInit(data)
 
