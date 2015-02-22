@@ -41,13 +41,13 @@ class decesion():
 			return False
 		elif(location[0] > self.width - 1 or location[1] > self.height - 1):
 			return False
-		elif(self.board[location[0]][location[1]] == "head"):
+		elif(self.board[location[0]][location[1]]['state'] == "head"):
 			return False
-		elif(self.board[location[0]][location[1]] == "body"):
+		elif(self.board[location[0]][location[1]]['state'] == "body"):
 			return False
-		elif(self.board[location[0]][location[1]] == "food"):
+		elif(self.board[location[0]][location[1]]['state'] == "food"):
 			return True
-		elif(self.board[location[0]][location[1]] == "empy"):
+		elif(self.board[location[0]][location[1]]['state'] == "empy"):
 			return True
 		return True
 
@@ -56,6 +56,7 @@ class decesion():
 		self.board = info['board']
 		self.snake = info['snakes']
 		self.food = info['food']
+		findPos();
 		return findDanger();
 
 	def findDanger(self):
