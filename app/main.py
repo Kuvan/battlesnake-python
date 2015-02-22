@@ -41,13 +41,13 @@ class decesion():
 			return False
 		elif(location[0] > self.width or location[1] > self.height):
 			return False
-		elif(self.board[location[0],location[1]] == "head"):
+		elif(self.board[location[0]][location[1]] == "head"):
 			return False
-		elif(self.board[location[0],location[1]] == "body"):
+		elif(self.board[location[0]][location[1]] == "body"):
 			return False
-		elif(self.board[location[0],location[1]] == "food"):
+		elif(self.board[location[0]][location[1]] == "food"):
 			return True
-		elif(self.board[location[0],location[1]] == "empy"):
+		elif(self.board[location[0]][location[1]] == "empy"):
 			return True
 		return True
 
