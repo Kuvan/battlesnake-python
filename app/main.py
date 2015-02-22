@@ -1,4 +1,4 @@
-import bottle
+mport bottle
 import json
 
 class decesion():
@@ -7,6 +7,18 @@ class decesion():
 
 	def initialize(self):
 		print 'hello world'
+
+	def realInit(self, data):
+		info = json.load(data)
+		self.game_id = info['game_id']
+		self.width = info['width']
+		self.height = info['height']
+	
+	def move(self):
+		findDanger()
+
+	def findDanger(self):
+		
 
 decide = decesion()
 
@@ -23,8 +35,10 @@ def index():
 def start():
     data = bottle.request.json
     
-    decide.initialize()
-	
+    
+
+    decide.realInit(data)
+
     return json.dumps({
         'name': 'golden_hamster',
         'color': '#00ff00',
