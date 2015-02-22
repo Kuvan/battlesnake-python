@@ -64,6 +64,7 @@ class decesion():
 				self.direction = 'left'
 			elif self.direction == 'right':
 				self.direction = 'up'
+		self.counter += 1
 		return self.direction
 	def move(self, info):
 		
@@ -142,7 +143,7 @@ def move():
     data = bottle.request.json
     
     return json.dumps({
-        'move': decide.random,
+        'move': decide.random(),
         'taunt': 'Hoo-ray'
     })
 
