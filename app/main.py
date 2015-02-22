@@ -39,7 +39,7 @@ class decesion():
 			location.Append(self.head[1])
 		if(location[0] < 0 or location[1] < 0):
 			return False
-		elif(location[0] > self.width or location[1] > self.height):
+		elif(location[0] > self.width - 1 or location[1] > self.height - 1):
 			return False
 		elif(self.board[location[0]][location[1]] == "head"):
 			return False
