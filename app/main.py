@@ -87,7 +87,13 @@ class decesion():
 			return 'right'
 		if (dirs['left'] > dirs['up']) and (dirs['left'] > dirs['down']) and (dirs['left'] > dirs['right']) and isSafe('left'):
 			return 'left'
-		return 'right'
+		if(isSafe('right')):		
+			return 'right'
+		if(isSafe('left')):
+			return 'left'
+		if(isSafe('down')):
+			return 'down'
+		return 'up'
 
 decide = decesion()
 
