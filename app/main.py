@@ -1,9 +1,18 @@
 import bottle
 import json
-import routing
+#import routing
 
-name = "golden_hamster"
-smart = brains(name)
+def function():
+    print "Hello World"
+
+class myClass():
+    def __init__(self):
+        print "this is a class"
+        
+function()
+glow = myClass()
+#name = "golden_hamster"
+#smart = brains(name)
 
 @bottle.get('/')
 def index():
@@ -17,7 +26,7 @@ def index():
 @bottle.post('/start')
 def start():
     data = bottle.request.json
-    smart.start(data)
+    #smart.start(data)
 	
     return json.dumps({
         'name': 'golden_hamster',
@@ -31,7 +40,7 @@ def start():
 def move():
     data = bottle.request.json
     
-    return smart.move()
+    #return smart.move()
 
 
 @bottle.post('/end')
