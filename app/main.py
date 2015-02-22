@@ -10,6 +10,8 @@ class decesion():
 		self.game_id = info['game_id']
 		self.width = info['width']
 		self.height = info['height']
+		self.direction = 'up'
+		self.counter = 0
 		return
 
 	def findPos():
@@ -50,7 +52,19 @@ class decesion():
 		elif(self.board[location[0]][location[1]]['state'] == "empy"):
 			return True
 		return True
-
+	
+	def random(self):
+		if self.counter == 3:
+			self.counter = 0;
+			if self.direction == 'up':
+				self.direction = 'right'
+			elif self.direction == 'right':
+				self.direction = 'down'
+			elif self.direction == 'down':
+				self.direction = 'left'
+			elif self.direction == 'right':
+				self.direction = 'up'
+		return self.direction
 	def move(self, info):
 		
 		self.board = info['board']
@@ -128,8 +142,8 @@ def move():
     data = bottle.request.json
     
     return json.dumps({
-        'move': decide.move(data),
-        'taunt': decide.move(data)
+        'move': decide.random,
+        'taunt': 'Hoo-ray'
     })
 
 
