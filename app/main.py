@@ -13,6 +13,7 @@ class decesion():
 		self.game_id = info['game_id']
 		self.width = info['width']
 		self.height = info['height']
+		return
 
 	def findPos():
 		xdex =0
@@ -21,7 +22,7 @@ class decesion():
 			ydex = 0
 			for y in x:
 				if y['state'] == 'head' and y['snake'] == 'golden_hamster':
-					return [xdec, ydex]
+					self.head = [xdec, ydex]
 				ydex += 1
 			xdex += 1
 	def move(self):
@@ -32,9 +33,28 @@ class decesion():
 		direction = findDanger();
 
 	def findDanger(self):
+		up = 0
+		down = 0
+		right = 0
+		left = 0
+
+		xdex =0
+		ydex= 0
+
 		for x in self.board:
+			ydex = 0
 			for y in x:
-				x =0
+				if y['state'] == 'snake':
+					if(ydex < self.head[1] ):
+						up += 1
+					elif(ydex > self.head[1]):
+						down -= 1;
+					if(xdex < self.head[0] ):
+						left += 1
+					elif(xdex > self.head[0]):
+						right -= 1;
+				ydex += 1	
+			xdex += 1
 		return 'up'
 
 decide = decesion()
