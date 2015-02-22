@@ -54,7 +54,7 @@ def start():
     
     
 
-    decide.realInit(data)
+   # decide.realInit(data)
 
     return json.dumps({
         'name': 'golden_hamster',
