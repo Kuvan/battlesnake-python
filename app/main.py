@@ -53,26 +53,13 @@ class decesion():
 			return True
 		return True
 	
-	def random(self):
-		if self.counter == 3:
-			self.counter = 0;
-			if self.direction == 'up':
-				self.direction = 'right'
-			elif self.direction == 'right':
-				self.direction = 'down'
-			elif self.direction == 'down':
-				self.direction = 'left'
-			elif self.direction == 'right':
-				self.direction = 'up'
-		self.counter += 1
-		return self.direction
 	def move(self, info):
 		
 		self.board = info['board']
 		self.snake = info['snakes']
 		self.food = info['food']
-		findPos();
-		return findDanger();
+		self.findPos();
+		return self.findDanger();
 
 	def findDanger(self):
 		dirs = {'up': 0, 'down': 0, 'right': 0, 'left': 0}
@@ -143,7 +130,7 @@ def move():
     data = bottle.request.json
     
     return json.dumps({
-        'move': decide.random(),
+        'move': decide.move(),
         'taunt': 'Hoo-ray'
     })
 
