@@ -129,7 +129,7 @@ def move():
     
     return json.dumps({
         'move': decide.move(data),
-        'taunt': 'battlesnake-python!'
+        'taunt': decide.move(data)
     })
 
 
