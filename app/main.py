@@ -2,7 +2,7 @@ import bottle
 import json
 
 class decesion():
-	return
+
 	def __init__(self):
 		print 'hello world'
 
@@ -10,6 +10,7 @@ class decesion():
 		print 'hello world'
 
 	def realInit(self, data):
+		return
 		info = json.load(data)
 		self.game_id = info['game_id']
 		self.width = info['width']
