@@ -1,26 +1,18 @@
-mport bottle
+import bottle
 import json
+#import routing
 
-class decesion():
-	def __init__(self):
-		print 'hello world'
+def function():
+    print "Hello World"
 
-	def initialize(self):
-		print 'hello world'
-
-	def realInit(self, data):
-		info = json.load(data)
-		self.game_id = info['game_id']
-		self.width = info['width']
-		self.height = info['height']
-	
-	def move(self):
-		findDanger()
-
-	def findDanger(self):
-		
-
-decide = decesion()
+class myClass():
+    def __init__(self):
+        print "this is a class"
+        
+function()
+glow = myClass()
+#name = "golden_hamster"
+#smart = brains(name)
 
 @bottle.get('/')
 def index():
@@ -34,11 +26,8 @@ def index():
 @bottle.post('/start')
 def start():
     data = bottle.request.json
-    
-    
-
-    decide.realInit(data)
-
+    #smart.start(data)
+	
     return json.dumps({
         'name': 'golden_hamster',
         'color': '#00ff00',
@@ -51,10 +40,7 @@ def start():
 def move():
     data = bottle.request.json
     
-    return json.dumps({
-        'move': 'left',
-        'taunt': 'battlesnake-python!'
-    })
+    #return smart.move()
 
 
 @bottle.post('/end')
